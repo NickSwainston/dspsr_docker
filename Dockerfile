@@ -52,8 +52,9 @@ RUN apt-get update && \
     docker.io \
     xorg \
     openbox \
-    && rm -rf /var/lib/apt/lists/* \
-    && apt-get -y clean
+    bc && \
+    rm -rf /var/lib/apt/lists/* && \
+    apt-get -y clean
 
 # Install python packages
 RUN pip install pip -U && \
