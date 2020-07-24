@@ -178,7 +178,6 @@ ENV PATH $PATH:$PSRCHIVE/bin
 ENV C_INCLUDE_PATH $C_INCLUDE_PATH:$PSRCHIVE/include
 ENV LD_LIBRARY_PATH $LD_LIBRARY_PATH:$PSRCHIVE/lib
 ENV PYTHONPATH $PSRCHIVE/lib/python2.7/site-packages
-WORKDIR $PSRCHIVE
 RUN ./bootstrap && \
     ./configure --prefix=$PSRCHIVE --x-libraries=/usr/lib/x86_64-linux-gnu --with-psrxml-dir=$PSRXML/install --enable-shared --enable-static F77=gfortran LDFLAGS="-L"$PSRXML"/install/lib" LIBS="-lpsrxml -lxml2" && \
     make -j $(nproc) && \
