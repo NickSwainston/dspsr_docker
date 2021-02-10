@@ -52,7 +52,8 @@ RUN apt-get update && \
     docker.io \
     xorg \
     openbox \
-    bc && \
+    bc \
+    xauth && \
     rm -rf /var/lib/apt/lists/* && \
     apt-get -y clean
 
